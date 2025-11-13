@@ -1,5 +1,5 @@
 import { Home } from "./pages/Index";
-
+import "./App.css"
 function App() {
   return (
     <>

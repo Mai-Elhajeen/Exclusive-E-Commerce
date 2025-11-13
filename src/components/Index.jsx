@@ -11,7 +11,7 @@ import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 import Timer from "./Timer";
 import Title from "./Title";
-import TopHeader from "./TopHeader";
+import TopHeader from "./TopHeader/TopHeader";
 import Banner from "./Banner";
 
 export {
