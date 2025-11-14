@@ -6,7 +6,7 @@ import CardService from "./CardService";
 import Categories from "./Categories";
 import HeadTitle from "./HeadTitle";
 import Line from "./Line";
-import NavBar from "./Navbar";
+import MainHeader from "./MainHeader/MainHeader";
 import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 import Timer from "./Timer";
@@ -23,7 +23,7 @@ export {
   Categories,
   HeadTitle,
   Line,
-  NavBar,
+  MainHeader,
   Pagination,
   SideBar,
   Timer,
