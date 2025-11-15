@@ -1,0 +1,52 @@
+.mainHeader {
+    width: 100%;
+    padding: 32px 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+}
+
+.menuIcon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navWrapper {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menuIcon {
+        display: block;
+    }
+    .navWrapper{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px;
+        display: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: translateY(-20px);
+        opacity: 0;
+        z-index: 100;
+    }
+    .navWrapper.show{
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

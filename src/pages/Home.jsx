@@ -10,7 +10,7 @@ import {
   Featured,
   Services,
   Footer,
-} from "../sections/Index";
+} from "../sections";
 
 const Home = () => {
   return (
