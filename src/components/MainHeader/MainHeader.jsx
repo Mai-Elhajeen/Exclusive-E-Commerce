@@ -14,7 +14,7 @@ const MainHeader = ({
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <header className={styles.header}>
+    <div className={styles.mainHeader}>
       <div className={styles.logo}>Exclusive</div>
       <span className={styles.menuIcon} onClick={() => setOpenMenu(!openMenu)}>
         <RiMenuLine />
@@ -30,7 +30,7 @@ const MainHeader = ({
         countFavorite={countFavorite}
         countCart={countCart}
       />
-    </header>
+    </div>
   );
 };
 
