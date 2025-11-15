@@ -1,0 +1,44 @@
+/* styles FilterSidebar */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  display: flex;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+}
+
+/* CategoryItem styles */
+.item {
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.row:hover {
+  background: #f3f3f3;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.children {
+  margin-left: 18px;
+  border-left: 2px solid #eee;
+  padding-left: 10px;
+  margin-top: 6px;
+  list-style: none;
+}

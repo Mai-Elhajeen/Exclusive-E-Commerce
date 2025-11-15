@@ -8,7 +8,7 @@ import HeadTitle from "./HeadTitle";
 import Line from "./Line";
 import MainHeader from "./MainHeader/MainHeader";
 import Pagination from "./Pagination";
-import SideBar from "./SideBar";
+import CategoriesSidebar from "./Hero/CategoriesSidebar";
 import Timer from "./Timer";
 import Title from "./Title";
 import TopHeader from "./TopHeader/TopHeader";
@@ -27,7 +27,7 @@ export {
   Line,
   MainHeader,
   Pagination,
-  SideBar,
+  CategoriesSidebar,
   Timer,
   Title,
   TopHeader,

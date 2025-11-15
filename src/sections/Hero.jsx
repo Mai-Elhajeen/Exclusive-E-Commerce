@@ -1,7 +1,13 @@
 import React from "react";
-
+import { Banner, CategoriesSidebar } from "../components";
+import styles from "./styles.module.css"
 const Hero = () => {
-  return <div>Hero</div>;
+  return (
+    <section className={styles.hero}>
+      <CategoriesSidebar />
+      <Banner />
+    </section>
+  );
 };
 
 export default Hero;
