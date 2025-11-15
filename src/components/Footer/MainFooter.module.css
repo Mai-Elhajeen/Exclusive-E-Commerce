@@ -1,0 +1,86 @@
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 40px;
+  background: #000;
+  color: #fafafa;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 180px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fafafa;
+  cursor: pointer;
+}
+.title {
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #FAFAFA;
+}
+.smallText {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: .8;
+}
+.subscribeBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #FAFAFA;
+}
+
+.subscribeBox input {
+  border: none;
+  padding: 12px;
+  width: 150px;
+  outline: none;
+  background: transparent;
+  color: #FAFAFA;
+}
+
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.qr {
+  width: 80px;
+}
+.storeColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.storeColumn img {
+  width: 110px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+

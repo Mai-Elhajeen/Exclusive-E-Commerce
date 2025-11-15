@@ -13,6 +13,8 @@ import Timer from "./Timer";
 import Title from "./Title";
 import TopHeader from "./TopHeader/TopHeader";
 import Banner from "./Banner";
+import MainFooter from "./Footer/MainFooter";
+import BottomFooter from "./Footer/BottomFooter";
 
 export {
   Arrow,
@@ -30,4 +32,6 @@ export {
   Title,
   TopHeader,
   Banner,
+  MainFooter,
+  BottomFooter
 };
