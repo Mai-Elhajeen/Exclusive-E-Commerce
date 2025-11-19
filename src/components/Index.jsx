@@ -12,7 +12,7 @@ import CategoriesSidebar from "./Hero/CategoriesSidebar";
 import Timer from "./Timer";
 import Title from "./Title";
 import TopHeader from "./TopHeader/TopHeader";
-import Banner from "./Banner";
+import Banner from "./Hero/Banner";
 import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
 
