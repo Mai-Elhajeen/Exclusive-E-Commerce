@@ -1,0 +1,67 @@
+/* styles FilterSidebar */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  max-height: calc(100vh - 150px);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+/* CategoryItem styles */
+.item {
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.row:hover {
+  background: #f3f3f3;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.children {
+  margin-left: 18px;
+  border-left: 2px solid #eee;
+  padding-left: 10px;
+  margin-top: 6px;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .children {
+    display: none;
+  }
+}
