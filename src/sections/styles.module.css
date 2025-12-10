@@ -5,7 +5,21 @@
   gap: 20px;
   align-items: stretch;
 }
-
+.section {
+  padding: 70px 40px 0 40px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cards {
+  padding: 40px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: start;
+}
 @media (max-width: 992px) {
   .hero {
     grid-template-columns: 220px 1fr;
@@ -15,10 +29,10 @@
   .hero {
     grid-template-columns: 1fr;
   }
-    .hero > :first-child {
+  .hero > :first-child {
     order: 2;
   }
-    .hero > :last-child {
+  .hero > :last-child {
     order: 1;
   }
 }
