@@ -3,7 +3,7 @@ import Btn from "./Btn";
 import CardArrival from "./CardArrival";
 import CardProduct from "./CardProduct/CardProduct";
 import CardService from "./CardService";
-import Categories from "./Categories";
+import CardCategories from "./CardCategories/CardCategories";
 import HeadTitle from "./HeadTitle";
 import Line from "./Line";
 import MainHeader from "./MainHeader/MainHeader";
@@ -22,7 +22,7 @@ export {
   CardArrival,
   CardProduct,
   CardService,
-  Categories,
+  CardCategories,
   HeadTitle,
   Line,
   MainHeader,
@@ -33,5 +33,5 @@ export {
   TopHeader,
   Banner,
   MainFooter,
-  BottomFooter
+  BottomFooter,
 };

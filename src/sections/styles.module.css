@@ -12,14 +12,21 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-top: 20px;
 }
-.cards {
+.cards,
+.categories {
   padding: 40px 0 0 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 20px;
   justify-content: start;
 }
+.categories {
+  grid-template-columns: repeat(6, minmax(170px, 1fr));
+  margin-bottom: 70px;
+}
+
 @media (max-width: 992px) {
   .hero {
     grid-template-columns: 220px 1fr;
