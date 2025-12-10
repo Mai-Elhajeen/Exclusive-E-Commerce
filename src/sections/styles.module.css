@@ -16,7 +16,7 @@
 }
 .cards,
 .categories {
-  padding: 40px 0 0 0;
+  padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 20px;
@@ -24,7 +24,6 @@
 }
 .categories {
   grid-template-columns: repeat(6, minmax(170px, 1fr));
-  margin-bottom: 70px;
 }
 
 @media (max-width: 992px) {
