@@ -1,7 +1,7 @@
-import Arrow from "./Arrow";
+import ArrowControls from "./ArrowControls/ArrowControls";
 import Btn from "./Btn";
 import CardArrival from "./CardArrival";
-import CardProduct from "./CardProduct";
+import CardProduct from "./CardProduct/CardProduct";
 import CardService from "./CardService";
 import Categories from "./Categories";
 import HeadTitle from "./HeadTitle";
@@ -9,7 +9,7 @@ import Line from "./Line";
 import MainHeader from "./MainHeader/MainHeader";
 import Pagination from "./Pagination";
 import CategoriesSidebar from "./Hero/CategoriesSidebar";
-import Timer from "./Timer";
+import Timer from "./Timer/Timer";
 import Title from "./Title";
 import TopHeader from "./TopHeader/TopHeader";
 import Banner from "./Hero/Banner";
@@ -17,7 +17,7 @@ import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
 
 export {
-  Arrow,
+  ArrowControls,
   Btn,
   CardArrival,
   CardProduct,
