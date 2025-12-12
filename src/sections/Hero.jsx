@@ -11,7 +11,7 @@ const Hero = () => {
         icon={<RiAppleFill />}
         title="iPhone 14 Series"
         description="Up to 10% off Voucher"
-        image="/src/assets/iPhone14.jpg"
+        image="/assets/iphone14.jpg"
       >
         <a href="#" className="shopBtn">
           Shop Now <RiArrowRightLine />
