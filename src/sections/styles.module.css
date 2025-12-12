@@ -5,7 +5,7 @@
   gap: 20px;
   align-items: stretch;
 }
-.section, .banner {
+.section, .banner, .services {
   padding: 70px 40px 0 40px;
 }
 .flex {
@@ -26,7 +26,7 @@
   grid-template-columns: repeat(6, minmax(170px, 1fr));
 }
 
-.banner {
+.banner, .services {
   margin-bottom: 70px;
 }
 
@@ -62,6 +62,10 @@
     .grid {
     grid-template-columns: 1fr;
   }
+  .flex{
+    flex-wrap: wrap;
+  }
+
 }
 @media (max-width: 768px) {
   .hero {
