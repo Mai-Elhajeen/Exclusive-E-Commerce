@@ -1,6 +1,6 @@
 import ArrowControls from "./ArrowControls/ArrowControls";
 import Btn from "./Btn";
-import CardArrival from "./CardArrival";
+import CardArrival from "./CardArrival/CardArrival";
 import CardProduct from "./CardProduct/CardProduct";
 import CardService from "./CardService";
 import CardCategories from "./CardCategories/CardCategories";
