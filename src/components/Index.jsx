@@ -2,7 +2,7 @@ import ArrowControls from "./ArrowControls/ArrowControls";
 import Btn from "./Btn";
 import CardArrival from "./CardArrival/CardArrival";
 import CardProduct from "./CardProduct/CardProduct";
-import CardService from "./CardService";
+import CardService from "./Services/CardService";
 import CardCategories from "./CardCategories/CardCategories";
 import HeadTitle from "./HeadTitle";
 import Line from "./Line";
@@ -16,6 +16,7 @@ import Banner from "./Hero/Banner";
 import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
 import BannerSection from "./Banner/Banner";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 export {
   ArrowControls,
@@ -35,5 +36,6 @@ export {
   Banner,
   MainFooter,
   BottomFooter,
-  BannerSection
+  BannerSection,
+  ScrollToTop
 };

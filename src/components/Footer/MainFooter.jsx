@@ -41,11 +41,11 @@ const MainFooter = () => {
         <h3 className={styles.title}>Download App</h3>
         <p className={styles.smallText}>Save $3 with App New User Only</p>
         <div className={styles.appRow}>
-          <img src="/src/assets/qr.jpg" alt="QRCode" className={styles.qr} />
+          <img src="/assets/qr.jpg" alt="QRCode" className={styles.qr} />
 
           <div className={styles.storeColumn}>
-            <img src="/src/assets/appstore.png" alt="App Store" />
-            <img src="/src/assets/googleplay.png" alt="Google Play" />
+            <img src="/assets/appstore.png" alt="App Store" />
+            <img src="/assets/googleplay.png" alt="Google Play" />
           </div>
         </div>
         <div className={styles.socialIcons}>
