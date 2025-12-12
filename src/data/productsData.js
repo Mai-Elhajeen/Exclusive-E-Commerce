@@ -133,7 +133,7 @@ export const products = [
     price: 150,
     oldPrice: 250,
     discount: 40,
-    badgeType: "discount",
+    badgeType: "New",
     image: "/assets/Army-Green_The_north_coat.png",
     colors: [
       {
@@ -181,7 +181,7 @@ export const products = [
     price: 960,
     oldPrice: 1160,
     discount: 40,
-    badgeType: "discount",
+    badgeType: "New",
     image: "/assets/Gucci duffle bag.png",
     colors: [],
     rating: 4.5,
