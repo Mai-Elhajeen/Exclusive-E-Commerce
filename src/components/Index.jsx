@@ -15,6 +15,7 @@ import TopHeader from "./TopHeader/TopHeader";
 import Banner from "./Hero/Banner";
 import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
+import BannerSection from "./Banner/Banner";
 
 export {
   ArrowControls,
@@ -34,4 +35,5 @@ export {
   Banner,
   MainFooter,
   BottomFooter,
+  BannerSection
 };
