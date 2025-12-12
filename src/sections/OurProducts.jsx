@@ -1,7 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import { HeadTitle, Title, ArrowControls, Btn, CardProduct } from "../components";
+import { products } from "../data/productsData";
+import styles from "./styles.module.css";
 
 const OurProducts = () => {
-  return <div>OurProducts</div>;
+  const itemsPerPage = 8;
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handleNext = () => {
+    if (startIndex + itemsPerPage < products.length) {
+      setStartIndex(startIndex + itemsPerPage);
+    }
+  };
+
+  const handlePrev = () => {
+    if (startIndex > 0) {
+      setStartIndex(startIndex - itemsPerPage);
+    }
+  };
+
+  const visibleProducts = products.slice(startIndex, startIndex + itemsPerPage);
+  
+    return (
+      <section className={styles.section}>
+        <HeadTitle title="Our Products" />
+        <div className={styles.flex}>
+          <Title title="Explore Our Products" />
+          <ArrowControls onPrev={handlePrev} onNext={handleNext} />
+        </div>
+  
+        <div className={styles.cards}>
+          {visibleProducts.map((product) => (
+            <CardProduct
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              badgeType={product.badgeType === "New"? product.badgeType: ""}
+              image={product.image}
+              colors={product.colors}
+              rating={product.rating}
+              views={product.views}
+              showFavorite={product.showFavorite}
+              showView={product.showView}
+              showColors={product.showColors}
+              showAddToCart={product.showAddToCart}
+            />
+          ))}
+        </div>
+
+        <Btn label={"View All Products"} />
+      </section>
+    ); 
 };
 
 export default OurProducts;
