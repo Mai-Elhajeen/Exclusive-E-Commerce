@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Timer.module.css";
 
-const Timer = ({ targetDate }) => {
+const Timer = ({ targetDate, variant = "default" }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
 
@@ -28,20 +28,20 @@ const Timer = ({ targetDate }) => {
   }, [targetDate]);
 
   const TimeBox = ({ value, label }) => (
-    <div className={styles.timeBox}>
-      <span className={styles.label}>{label}</span>
-      <span className={styles.number}>{value}</span>
+    <div className={`${styles.timeBox} ${variant === "banner" ? styles.bannerBox : ""}`}>
+      <span className={`${styles.label} ${variant === "banner" ? styles.bannerLabel : ""}`}>{label}</span>
+      <span className={`${styles.number} ${variant === "banner" ? styles.bannerNumber : ""}`}>{value}</span>
     </div>
   );
 
   return (
-    <div className={styles.timerWrapper}>
+    <div className={`${styles.timerWrapper} ${variant === "banner" ? styles.timerWrapper : ""}`}>
       <TimeBox value={timeLeft.days} label="Days" />
-      <span className={styles.separator}>:</span>
+      <span className={`${styles.separator} ${variant === "banner" ? styles.bannerSeparator : ""}`}>:</span>
       <TimeBox value={timeLeft.hours} label="Hours" />
-      <span className={styles.separator}>:</span>
+      <span className={`${styles.separator} ${variant === "banner" ? styles.bannerSeparator : ""}`}>:</span>
       <TimeBox value={timeLeft.minutes} label="Minutes" />
-      <span className={styles.separator}>:</span>
+      <span className={`${styles.separator} ${variant === "banner" ? styles.bannerSeparator : ""}`}>:</span>
       <TimeBox value={timeLeft.seconds} label="Seconds" />
     </div>
   );

@@ -34,7 +34,7 @@ const Todays = () => {
       <HeadTitle />
       <div className={styles.flex}>
         <Title />
-        <Timer targetDate="2025-12-31T23:59:59" />
+        <Timer targetDate="2025-12-31T23:59:59" variant="default" />
         <ArrowControls onPrev={handlePrev} onNext={handleNext} />
       </div>
 
