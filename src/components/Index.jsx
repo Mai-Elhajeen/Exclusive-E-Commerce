@@ -16,6 +16,7 @@ import Banner from "./Hero/Banner";
 import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
 import BannerSection from "./Banner/Banner";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 export {
   ArrowControls,
@@ -35,5 +36,6 @@ export {
   Banner,
   MainFooter,
   BottomFooter,
-  BannerSection
+  BannerSection,
+  ScrollToTop
 };

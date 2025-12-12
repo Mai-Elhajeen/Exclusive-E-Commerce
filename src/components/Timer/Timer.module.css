@@ -55,6 +55,106 @@
   color: #000;
   order: 2;
 }
+
 .bannerSeparator {
   display: none;
+}
+
+/* ======================================= */
+/* RESPONSIVE SECTION */
+/* ======================================= */
+
+@media (max-width: 992px) {
+  .number {
+    font-size: 32px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .separator {
+    font-size: 26px;
+  }
+
+  .bannerBox {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bannerNumber {
+    font-size: 18px;
+  }
+
+  .bannerLabel {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timerWrapper {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .number {
+    font-size: 26px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .separator {
+    font-size: 22px;
+  }
+
+  .bannerBox {
+    width: 52px;
+    height: 52px;
+  }
+
+  .bannerNumber {
+    font-size: 16px;
+  }
+
+  .bannerLabel {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timerWrapper {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .timeBox {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .number {
+    font-size: 20px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .separator {
+    font-size: 18px;
+  }
+
+  .bannerBox {
+    width: 45px;
+    height: 45px;
+  }
+
+  .bannerNumber {
+    font-size: 14px;
+  }
+
+  .bannerLabel {
+    font-size: 7px;
+  }
 }
