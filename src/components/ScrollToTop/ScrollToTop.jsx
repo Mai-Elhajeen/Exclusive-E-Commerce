@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScrollToTop.module.css";
 import { RiArrowUpLine } from "@remixicon/react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const [showButton, setShowButton] = useState(false);
+  const pathname = useLocation();
+
+  useEffect(()=> {
+    Window.scrollTo({to: 0, behavior: "smooth"});
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => {
