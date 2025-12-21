@@ -10,7 +10,6 @@ const MainHeader = ({
   showCart = true,
   showUser = true,
   countFavorite = 0,
-  countCart = 3,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
@@ -28,7 +27,6 @@ const MainHeader = ({
         showCart={showCart}
         showUser={showUser}
         countFavorite={countFavorite}
-        countCart={countCart}
       />
     </div>
   );

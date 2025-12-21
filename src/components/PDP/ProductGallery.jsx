@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProductGallery.module.css";
 
-const ProductGallery = ({ product }) => {
-  const { image, colors } = product;
+const ProductGallery = ({ product, activeColorKey }) => {
+  if (!product) return null;
+  
+  const activeColor =
+    product.colors?.find((c) => c.key === activeColorKey) ||
+    product.colors?.[0];
+  
+  const images =
+    activeColor?.images?.length > 0
+      ? activeColor.images
+      : product.image
+      ? [product.image]
+      : [];
 
-  const images = colors?.length
-    ? colors.map(c => c.image)
-    : [image];
+  const [activeImage, setActiveImage] = useState(images[0] || null);
 
-  const [activeImage, setActiveImage] = useState(images[0]);
+  useEffect(() => {
+    if (images.length > 0) {
+      setActiveImage(images[0]);
+    }
+  }, [activeColorKey, images]);
+
+  if (!images.length) return null;
 
   return (
     <div className={styles.gallery}>
@@ -22,7 +37,7 @@ const ProductGallery = ({ product }) => {
             }`}
             onClick={() => setActiveImage(img)}
           >
-            <img src={img} alt="thumbnail" />
+            <img src={img} alt={`angle-${idx}`} />
           </div>
         ))}
       </div>

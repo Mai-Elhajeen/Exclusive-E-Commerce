@@ -2,6 +2,12 @@ import { products as mockProducts } from "../data/productsData";
 
 const mapApiProductToUI = (apiProduct) => {
   const mock = mockProducts.find(p => p.id === apiProduct.id);
+  const normalizedColors =
+    mock?.colors?.map((color) => ({
+      key: color.key,
+      color: color.color,
+      images: color.images || color.image || [],
+    })) || [];
 
   return {
     id: apiProduct.id,
@@ -16,13 +22,7 @@ const mapApiProductToUI = (apiProduct) => {
 
     image: apiProduct.image,
     
-    colors: mock?.colors || [
-      {
-        key: "default",
-        color: "#ccc",
-        images: [apiProduct.image],
-      },
-    ],
+    colors: normalizedColors,
     rating: apiProduct.rating?.rate || 0,
     views: mock?.views || 0,
     showFavorite: true,

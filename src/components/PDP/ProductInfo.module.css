@@ -24,6 +24,23 @@
   font-size: 14px;
 }
 
+.separator {
+  color: #777;
+}
+
+.status {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inStock {
+  color: #00FF66;
+}
+
+.outOfStock {
+  color: #DB4444;
+}
+
 .priceRow {
   display: flex;
   align-items: center;
@@ -50,14 +67,14 @@
   
 }
 
-.colors {
+.colors, .sizes {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.colors span {
-    font-size: 20px;
+.colors .label, .sizes .label {
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -81,6 +98,33 @@
 .actions {
   display: flex;
   gap: 16px;
+}
+.sizeOptions {
+  display: flex;
+  gap: 12px;
+}
+
+.sizeBtn {
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+.sizeBtn:hover {
+  background: #DB4444;
+  color: #fff;
+  border: none;
+}
+
+.sizeBtn.active {
+  background: #DB4444;
+  color: #fff;
+  border: none;
 }
 
 .quantity {
@@ -111,7 +155,7 @@ color: #fff;
   padding: 0 12px;
 }
 
-.addToCart {
+.btnActions {
   flex: 1;
   background: #db4444;
   color: #fff;
@@ -119,6 +163,20 @@ color: #fff;
   cursor: pointer;
   font-weight: 500;
   border-radius: 4px;
+}
+
+.favBtn {
+  border: 1px solid #777;
+  padding: 8px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.error {
+  color: #db4444;
+  font-size: 18px;
+  margin-top: 8px;
 }
 
 .delivery {

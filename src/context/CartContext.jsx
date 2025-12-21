@@ -1,11 +1,11 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
 
-    // get cart items from local storage on initial load
+  // get cart items from local storage on initial load
     const savedCart = localStorage.getItem("cartItems");
     return savedCart ? JSON.parse(savedCart) : [];
   });
@@ -15,20 +15,21 @@ const CartProvider = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+
   // add item to cart
-  const addToCart = (product) => {
+  const addToCart = (product, quantity=1, selectedColor=null) => {
     setCartItems((prevProducts) => {
       const existingProduct = prevProducts.find(
-        (item) => item.id === product.id
+        (item) => item.id === product.id && item.selectedColor === selectedColor
       );
       if (existingProduct) {
         return prevProducts.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+          item === existingProduct
+            ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        return [...prevProducts, { ...product, quantity: 1 }];
+        return [...prevProducts, { ...product, quantity, selectedColor } ];
       }
     });
   };
@@ -68,4 +69,8 @@ const CartProvider = ({ children }) => {
   );
 };
 
-export { CartContext, CartProvider };
+const useCart = () => {
+  return useContext(CartContext);
+}
+
+export {CartProvider, useCart};

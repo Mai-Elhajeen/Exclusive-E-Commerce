@@ -1,5 +1,3 @@
-// data/products.ts
-
 export const products = [
   {
     id: 1,
@@ -23,7 +21,7 @@ export const products = [
       {
         key: "blue",
         color: "#0000ff",
-        image: [
+        images: [
           "/assets/Blue_HAVIT_HV-G92_Gamepad.png",
           "/assets/Blue_HAVIT_HV-G92_Gamepad-1.png",
           "/assets/Blue_HAVIT_HV-G92_Gamepad-2.png",
@@ -33,7 +31,7 @@ export const products = [
       {
         key: "black",
         color: "#000000",
-        image: [
+        images: [
           "/assets/Black_HAVIT_HV-G92_Gamepad.png",
           "/assets/Black_HAVIT_HV-G92_Gamepad-1.png",
           "/assets/Black_HAVIT_HV-G92_Gamepad-2.png",
@@ -48,7 +46,7 @@ export const products = [
     showColors: true,
     showAddToCart: true,
     status: "In Stock",
-    sizes: ["XS", "S", "M", "L"],
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 2,
