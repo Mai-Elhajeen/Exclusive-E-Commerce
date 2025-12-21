@@ -17,6 +17,9 @@ import MainFooter from "./Footer/MainFooter";
 import BottomFooter from "./Footer/BottomFooter";
 import BannerSection from "./Banner/Banner";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
+import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
+import ProductGallery from "./PDP/ProductGallery";
+import ProductInfo from "./PDP/ProductInfo";
 
 export {
   ArrowControls,
@@ -37,5 +40,8 @@ export {
   MainFooter,
   BottomFooter,
   BannerSection,
-  ScrollToTop
+  ScrollToTop,
+  Breadcrumbs,
+  ProductGallery,
+  ProductInfo,
 };
