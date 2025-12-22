@@ -5,11 +5,14 @@ import {
 } from "../components";
 import { products } from "../data/productsData";
 import styles from "./styles.module.css";
+import { useCart } from "../context/CartContext";
+
 
 const RelatedItems = () => {
   const itemsPerPage = 4;
   const visibleProducts = products.slice(0, itemsPerPage);
-  
+  const { addToCart } = useCart();
+
   return (
     <section className={styles.section}>
       <HeadTitle title="Related Item" />
@@ -30,6 +33,7 @@ const RelatedItems = () => {
             showView={product.showView}
             showColors={product.showColors}
             showAddToCart={product.showAddToCart}
+            onAddToCart={() => addToCart(product)}
           />
         ))}
       </div>
