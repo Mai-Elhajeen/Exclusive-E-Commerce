@@ -7,6 +7,8 @@ import BannerCategories from "./BannerCategories";
 import OurProducts from "./OurProducts";
 import Featured from "./Featured";
 import Services from "./Services";
+import PDPContent from "./PDPContent";
+import RelatedItems from "./RelatedItems";
 import Footer from "./Footer";
 
 export {
@@ -19,5 +21,7 @@ export {
   OurProducts,
   Featured,
   Services,
+  PDPContent,
+  RelatedItems,
   Footer,
 };

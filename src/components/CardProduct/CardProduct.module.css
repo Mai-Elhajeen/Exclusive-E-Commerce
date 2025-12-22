@@ -63,7 +63,10 @@
   background: #db4444;
   color: #fff;
 }
-
+.icon.active {
+  background: #db4444;
+  color: #fff;
+}
 .badge {
   position: absolute;
   top: 16px;

@@ -11,6 +11,7 @@ import {
 } from "@remixicon/react";
 
 import styles from "./IconsRight.module.css";
+import { useCart } from "../../context/CartContext";
 
 const IconsRight = ({
   showSearch,
@@ -18,9 +19,11 @@ const IconsRight = ({
   showCart,
   showUser,
   countFavorite,
-  countCart,
 }) => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
+  const { cartItems } = useCart();
+
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <div className={styles.right}>
@@ -32,23 +35,26 @@ const IconsRight = ({
       )}
       {showFavorite && (
         <div className={styles.iconBox}>
-            <RiHeartLine />
-          {countFavorite > 0 && <span className={styles.count}>{countFavorite}</span>}
+          <RiHeartLine />
+          {countFavorite > 0 && (
+            <span className={styles.count}>{countFavorite}</span>
+          )}
         </div>
       )}
 
       {showCart && (
         <div className={styles.iconBox}>
-            <RiShoppingCart2Line />
-          {countCart > 0 && <span className={styles.count}>{countCart}</span>}
+          <RiShoppingCart2Line />
+          {cartCount > 0 && <span className={styles.count}>{cartCount}</span>}
         </div>
       )}
 
       {showUser && (
         <div className={styles.userBox}>
-            <RiUser3Line onClick={() => setOpenUserMenu(!openUserMenu)}
-            className={openUserMenu ? styles.activeUserIcon: ""}
-            />
+          <RiUser3Line
+            onClick={() => setOpenUserMenu(!openUserMenu)}
+            className={openUserMenu ? styles.activeUserIcon : ""}
+          />
           {openUserMenu && (
             <ul className={styles.dropdown}>
               <li>

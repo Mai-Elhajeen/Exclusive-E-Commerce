@@ -6,6 +6,7 @@ import {
   RiStarFill,
   RiStarLine,
   RiStarHalfLine,
+  RiHeartFill,
 } from "@remixicon/react";
 import styles from "./CardProduct.module.css";
 
@@ -24,6 +25,7 @@ const CardProduct = ({
   showDelete = false,
   showColors = true,
   showAddToCart = true,
+  onAddToCart,
 }) => {
   const [selectedColorKey, setSelectedColorKey] = useState(
     colors && colors.length > 0 ? colors[0].key : null
@@ -33,6 +35,8 @@ const CardProduct = ({
     (selectedColorKey &&
       colors.find((c) => c.key === selectedColorKey)?.image) ||
     image;
+
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     if (colors && colors.length > 0) {
@@ -61,8 +65,14 @@ const CardProduct = ({
         {/* ICONS */}
         <div className={styles.icons}>
           {showFavorite && (
-            <span className={styles.icon}>
-              <RiHeartLine />
+            <span
+              className={`${styles.icon} ${isFav ? styles.active : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFav((prev) => !prev);
+              }}
+            >
+              {isFav ? <RiHeartFill /> : <RiHeartLine />}
             </span>
           )}
           {showView && (
@@ -79,7 +89,15 @@ const CardProduct = ({
 
         {/* Add To Cart */}
         {showAddToCart && (
-          <button className={styles.addToCart}>Add To Cart</button>
+          <button
+            className={styles.addToCart}
+            onClick={(e) => {
+              e.stopPropagation();
+              onAddToCart?.();
+            }}
+          >
+            Add To Cart
+          </button>
         )}
       </div>
 

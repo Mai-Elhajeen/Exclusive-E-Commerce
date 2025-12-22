@@ -1,5 +1,3 @@
-// data/products.ts
-
 export const products = [
   {
     id: 1,
@@ -13,17 +11,32 @@ export const products = [
       {
         key: "red",
         color: "#ff0000",
-        image: "/assets/Read_HAVIT_HV-G92_Gamepad.png",
+        images: [
+          "/assets/Read_HAVIT_HV-G92_Gamepad.png",
+          "/assets/Red_HAVIT_HV-G92_Gamepad-1.png",
+          "/assets/Red_HAVIT_HV-G92_Gamepad-2.png",
+          "/assets/Red_HAVIT_HV-G92_Gamepad-3.png"
+        ],
       },
       {
         key: "blue",
         color: "#0000ff",
-        image: "/assets/Blue_HAVIT_HV-G92_Gamepad.png",
+        images: [
+          "/assets/Blue_HAVIT_HV-G92_Gamepad.png",
+          "/assets/Blue_HAVIT_HV-G92_Gamepad-1.png",
+          "/assets/Blue_HAVIT_HV-G92_Gamepad-2.png",
+          "/assets/Blue_HAVIT_HV-G92_Gamepad-3.png"
+        ],
       },
       {
         key: "black",
         color: "#000000",
-        image: "/assets/Black_HAVIT_HV-G92_Gamepad.png",
+        images: [
+          "/assets/Black_HAVIT_HV-G92_Gamepad.png",
+          "/assets/Black_HAVIT_HV-G92_Gamepad-1.png",
+          "/assets/Black_HAVIT_HV-G92_Gamepad-2.png",
+          "/assets/Black_HAVIT_HV-G92_Gamepad-3.png"
+        ],
       },
     ],
     rating: 4.5,
@@ -32,6 +45,8 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    status: "In Stock",
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 2,
