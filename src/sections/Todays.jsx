@@ -10,11 +10,15 @@ import {
   Line,
 } from "../components";
 import { products } from "../data/productsData";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
-const Todays = () => {
-    const itemsPerPage = 4;
+const Todays = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
+  const itemsPerPage = 4;
   const [startIndex, setStartIndex] = useState(0);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const handleNext = () => {
     if (startIndex + itemsPerPage < products.length) {
@@ -54,6 +58,16 @@ const Todays = () => {
             showView={product.showView}
             showColors={product.showColors}
             showAddToCart={product.showAddToCart}
+            isLoggedIn={isLoggedIn}
+            isFavorite={favoriteItems.includes(product.id)}
+            onToggleFavorite={() => toggleFavorite(product.id)}
+            onAddToCart={() => {
+              if (!isLoggedIn) {
+                navigate("/login");
+                return;
+              }
+              addToCart(product, 1);
+            }}
           />
         ))}
       </div>

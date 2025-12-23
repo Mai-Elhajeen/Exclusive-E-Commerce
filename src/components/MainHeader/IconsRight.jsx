@@ -19,6 +19,8 @@ const IconsRight = ({
   showCart,
   showUser,
   countFavorite,
+  onCartClick,
+  onFavoriteClick,
 }) => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
   const { cartItems } = useCart();
@@ -34,7 +36,7 @@ const IconsRight = ({
         </div>
       )}
       {showFavorite && (
-        <div className={styles.iconBox}>
+        <div className={styles.iconBox} onClick={onFavoriteClick}>
           <RiHeartLine />
           {countFavorite > 0 && (
             <span className={styles.count}>{countFavorite}</span>
@@ -43,7 +45,7 @@ const IconsRight = ({
       )}
 
       {showCart && (
-        <div className={styles.iconBox}>
+        <div className={styles.iconBox} onClick={onCartClick}>
           <RiShoppingCart2Line />
           {cartCount > 0 && <span className={styles.count}>{cartCount}</span>}
         </div>

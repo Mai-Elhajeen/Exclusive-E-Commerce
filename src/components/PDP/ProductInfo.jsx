@@ -19,10 +19,12 @@ const ProductInfo = ({
   setActiveColor,
   activeSize,
   setActiveSize,
+  isLoggedIn,
+  isFavorite,
+  toggleFavorite,
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [errorMsg, setErrorMsg] = useState("");
-  const [isFavorite, setIsFavorite] = useState(false);
 
   const { addToCart } = useCart();
   const navigate = useNavigate();
@@ -164,8 +166,13 @@ const ProductInfo = ({
         <button
           type="button"
           className={styles.favBtn}
-          onClick={() => setIsFavorite((prev) => !prev)}
-          aria-label="Toggle favorite"
+          onClick={() => {
+            if (!isLoggedIn) {
+              navigate("/login");
+              return;
+            }
+            toggleFavorite(product.id);
+          }}
         >
           {isFavorite ? <RiHeartFill color="#db4444" /> : <RiHeartLine />}
         </button>

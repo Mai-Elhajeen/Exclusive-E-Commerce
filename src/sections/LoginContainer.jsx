@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import { LoginForm } from "../components";
 
-const LoginContainer = () => {
+const LoginContainer = ({onLogin}) => {
   return (
     <section className={styles.login}>
       <div className={styles.imageWrapper}>
@@ -12,7 +12,7 @@ const LoginContainer = () => {
         />
       </div>
 
-      <LoginForm />
+      <LoginForm onLogin={onLogin} />
     </section>
   );
 };

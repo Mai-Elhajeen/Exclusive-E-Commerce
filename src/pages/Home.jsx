@@ -1,29 +1,14 @@
 import React from "react";
-import {
-  Header,
-  Hero,
-  Todays,
-  Categories,
-  ThisMonth,
-  BannerCategories,
-  OurProducts,
-  Featured,
-  Services,
-  Footer,
-} from "../sections";
-
-const Home = () => {
+import { Footer, Header, HomeContainer } from "../sections";
+const Home = ({ isLoggedIn, favoriteItems, toggleFavorite }) => {
   return (
     <>
-      <Header />
-      <Hero />
-      <Todays />
-      <Categories />
-      <ThisMonth />
-      <BannerCategories />
-      <OurProducts />
-      <Featured />
-      <Services />
+      <Header isLoggedIn={isLoggedIn} favoriteItems={favoriteItems} />
+      <HomeContainer
+        isLoggedIn={isLoggedIn}
+        favoriteItems={favoriteItems}
+        toggleFavorite={toggleFavorite}
+      />
       <Footer />
     </>
   );
