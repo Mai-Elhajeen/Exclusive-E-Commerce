@@ -25,6 +25,7 @@ import CartSummary from "./Cart/CartSummary";
 import CartTable from "./Cart/CartTable";
 import BillingForm from "./Checkout/BillingForm";
 import CheckoutSummary from "./Checkout/CheckoutSummary";
+import LoginForm from "./Login/LoginForm";
 
 export {
   ArrowControls,
@@ -54,4 +55,5 @@ export {
   CartTable,
   BillingForm,
   CheckoutSummary,
+  LoginForm,
 };

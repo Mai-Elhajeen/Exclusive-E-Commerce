@@ -7,7 +7,7 @@ const NavLinks = () => {
     { id: "home", label: "Home", path: "/" },
     { id: "contact", label: "Contact", path: "/contact" },
     { id: "about", label: "About", path: "/about" },
-    { id: "signup", label: "Sign Up", path: "/signup" },
+    { id: "login", label: "Login", path: "/login" },
   ];
 
   const currentPath = window.location.pathname;
@@ -16,7 +16,7 @@ const NavLinks = () => {
       {links.map((link) => (
         <NavLink
           key={link.id}
-          href={link.path}
+          to={link.path}
           className={currentPath === link.path ? styles.active: ""}
         >
           {link.label}

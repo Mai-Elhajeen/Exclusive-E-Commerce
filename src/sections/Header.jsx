@@ -1,11 +1,25 @@
 import React from "react";
 import { TopHeader, MainHeader, Line } from "../components";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isLoggedIn, favoriteItems = [] }) => {
+  const navigate = useNavigate();
+
   return (
     <header>
       <TopHeader />
-      <MainHeader showUser={false} countCart={0} />
+      <MainHeader
+        showFavorite
+        showCart
+        showUser={isLoggedIn}
+        countFavorite={favoriteItems.length}
+        onCartClick={() =>
+          isLoggedIn ? navigate("/cart") : navigate("/login")
+        }
+        onFavoriteClick={() => {
+          if (!isLoggedIn) navigate("/login");
+        }}
+      />
       <Line margin="16px 0 0" />
     </header>
   );

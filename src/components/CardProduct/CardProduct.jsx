@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   RiDeleteBin6Line,
   RiEyeLine,
@@ -11,6 +12,7 @@ import {
 import styles from "./CardProduct.module.css";
 
 const CardProduct = ({
+  id,
   title,
   price,
   oldPrice,
@@ -26,6 +28,9 @@ const CardProduct = ({
   showColors = true,
   showAddToCart = true,
   onAddToCart,
+  isLoggedIn,
+  isFavorite,
+  onToggleFavorite,
 }) => {
   const [selectedColorKey, setSelectedColorKey] = useState(
     colors && colors.length > 0 ? colors[0].key : null
@@ -35,8 +40,7 @@ const CardProduct = ({
     (selectedColorKey &&
       colors.find((c) => c.key === selectedColorKey)?.image) ||
     image;
-
-  const [isFav, setIsFav] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (colors && colors.length > 0) {
@@ -66,13 +70,16 @@ const CardProduct = ({
         <div className={styles.icons}>
           {showFavorite && (
             <span
-              className={`${styles.icon} ${isFav ? styles.active : ""}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsFav((prev) => !prev);
+              className={`${styles.icon} ${isFavorite ? styles.active : ""}`}
+              onClick={() => {
+                if (!isLoggedIn) {
+                  navigate("/login");
+                  return;
+                }
+                onToggleFavorite?.(id);
               }}
             >
-              {isFav ? <RiHeartFill /> : <RiHeartLine />}
+              {isFavorite ? <RiHeartFill /> : <RiHeartLine />}
             </span>
           )}
           {showView && (
@@ -93,6 +100,10 @@ const CardProduct = ({
             className={styles.addToCart}
             onClick={(e) => {
               e.stopPropagation();
+              if (!isLoggedIn) {
+                navigate("/login");
+                return;
+              }
               onAddToCart?.();
             }}
           >

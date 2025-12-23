@@ -1,0 +1,45 @@
+.formWrapper {
+  padding: 80px 64px;
+  max-width: 420px;
+}
+
+.formWrapper h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.formWrapper p {
+  margin-bottom: 32px;
+}
+
+.form input {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
+  font-size: 15px;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.actions button {
+  background: #db4444;
+  color: #fff;
+  padding: 14px 36px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.forgot {
+  color: #db4444;
+  font-size: 14px;
+  cursor: pointer;
+}

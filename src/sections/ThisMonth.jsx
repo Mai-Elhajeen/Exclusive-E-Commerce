@@ -1,11 +1,17 @@
 import React from "react";
-import { HeadTitle, Title, Btn, CardProduct, Line } from "../components";
+import { HeadTitle, Title, Btn, CardProduct } from "../components";
 import { products } from "../data/productsData";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-const ThisMonth = () => {
-  const start = products.id= 6;
-  const end = products.id= 10;
-  const visibleProducts = products.slice(start, end)
+
+const ThisMonth = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const start = 6;
+  const end = 10;
+  const visibleProducts = products.slice(start, end);
+
   return (
     <section className={styles.section}>
       <HeadTitle title="This Month" />
@@ -18,6 +24,7 @@ const ThisMonth = () => {
         {visibleProducts.map((product) => (
           <CardProduct
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             oldPrice={product.oldPrice}
@@ -30,6 +37,16 @@ const ThisMonth = () => {
             showView={product.showView}
             showColors={product.showColors}
             showAddToCart={product.showAddToCart}
+            isLoggedIn={isLoggedIn}
+            isFavorite={favoriteItems.includes(product.id)}
+            onToggleFavorite={() => toggleFavorite(product.id)}
+            onAddToCart={() => {
+              if (!isLoggedIn) {
+                navigate("/login");
+                return;
+              }
+              addToCart(product, 1);
+            }}
           />
         ))}
       </div>
