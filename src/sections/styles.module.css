@@ -5,7 +5,7 @@
   gap: 20px;
   align-items: stretch;
 }
-.section, .banner, .services {
+.section, .banner, .services, .login {
   padding: 70px 40px 0 40px;
 }
 .flex {
@@ -149,6 +149,26 @@
   }
 }
 
+/* Login */
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  padding-left: 0;
+  padding-bottom: 70px;
+}
+
+.imageWrapper {
+  background: #cde4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper img {
+  width: 80%;
+  max-width: 420px;
+}
 
 @media (max-width: 992px) {
   .container {
@@ -183,6 +203,13 @@
   }
   .hero > :last-child {
     order: 1;
+  }
+    .login {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    display: none;
   }
 }
 @media (max-width: 480px) {

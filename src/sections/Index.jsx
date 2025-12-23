@@ -11,6 +11,7 @@ import PDPContent from "./PDPContent";
 import RelatedItems from "./RelatedItems";
 import CartContainer from "./CartContainer";
 import CheckoutContainer from "./CheckoutContainer";
+import LoginContainer from "./LoginContainer";
 import Footer from "./Footer";
 
 export {
@@ -27,5 +28,6 @@ export {
   RelatedItems,
   CartContainer,
   CheckoutContainer,
+  LoginContainer,
   Footer,
 };
