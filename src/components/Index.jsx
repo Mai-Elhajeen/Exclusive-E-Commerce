@@ -20,6 +20,9 @@ import ScrollToTop from "./ScrollToTop/ScrollToTop";
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 import ProductGallery from "./PDP/ProductGallery";
 import ProductInfo from "./PDP/ProductInfo";
+import CartItem from "./Cart/CartItem";
+import CartSummary from "./Cart/CartSummary";
+import CartTable from "./Cart/CartTable";
 
 export {
   ArrowControls,
@@ -44,4 +47,7 @@ export {
   Breadcrumbs,
   ProductGallery,
   ProductInfo,
+  CartItem,
+  CartSummary,
+  CartTable,
 };

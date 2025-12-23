@@ -9,6 +9,7 @@ import Featured from "./Featured";
 import Services from "./Services";
 import PDPContent from "./PDPContent";
 import RelatedItems from "./RelatedItems";
+import CartContainer from "./CartContainer";
 import Footer from "./Footer";
 
 export {
@@ -23,5 +24,6 @@ export {
   Services,
   PDPContent,
   RelatedItems,
+  CartContainer,
   Footer,
 };

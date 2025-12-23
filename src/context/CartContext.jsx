@@ -4,8 +4,7 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
-
-  // get cart items from local storage on initial load
+    // get cart items from local storage on initial load
     const savedCart = localStorage.getItem("cartItems");
     return savedCart ? JSON.parse(savedCart) : [];
   });
@@ -15,12 +14,19 @@ const CartProvider = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-
   // add item to cart
-  const addToCart = (product, quantity=1, selectedColor=null) => {
+  const addToCart = (
+    product,
+    quantity = 1,
+    selectedColor = null,
+    selectedSize = null
+  ) => {
     setCartItems((prevProducts) => {
       const existingProduct = prevProducts.find(
-        (item) => item.id === product.id && item.selectedColor === selectedColor
+        (item) =>
+          item.id === product.id &&
+          item.selectedColor === selectedColor &&
+          item.selectedSize === selectedSize
       );
       if (existingProduct) {
         return prevProducts.map((item) =>
@@ -29,27 +35,49 @@ const CartProvider = ({ children }) => {
             : item
         );
       } else {
-        return [...prevProducts, { ...product, quantity, selectedColor } ];
+        return [
+          ...prevProducts,
+          { ...product, quantity, selectedColor, selectedSize },
+        ];
       }
     });
   };
 
   // remove item from cart
-  const removeFromCart = (productId) => {
+  const removeFromCart = (productId, selectedColor, selectedSize) => {
     setCartItems((prevProducts) =>
-      prevProducts.filter((item) => item.id !== productId)
+      prevProducts.filter(
+        (item) =>
+          item.id !== productId &&
+          item.selectedColor === selectedColor &&
+          item.selectedSize === selectedSize
+      )
     );
   };
 
   // update item quantity in cart
-  const updateQuantity = (productId, quantity) => {
+  const updateQuantity = (productId, selectedColor, selectedSize, quantity) => {
+    if (quantity < 1) return;
+
     setCartItems((prevProducts) =>
       prevProducts.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
+        item.id === productId &&
+        item.selectedColor === selectedColor &&
+        item.selectedSize === selectedSize
+          ? { ...item, quantity }
+          : item
       )
     );
   };
-  
+
+  // total items in cart
+  const totalPrice = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   // clear cart
   const clearCart = () => {
     setCartItems([]);
@@ -61,6 +89,8 @@ const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        totalPrice,
+        totalQuantity,
         clearCart,
       }}
     >
@@ -71,6 +101,6 @@ const CartProvider = ({ children }) => {
 
 const useCart = () => {
   return useContext(CartContext);
-}
+};
 
-export {CartProvider, useCart};
+export { CartProvider, useCart };
