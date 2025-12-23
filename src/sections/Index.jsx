@@ -10,6 +10,7 @@ import Services from "./Services";
 import PDPContent from "./PDPContent";
 import RelatedItems from "./RelatedItems";
 import CartContainer from "./CartContainer";
+import CheckoutContainer from "./CheckoutContainer";
 import Footer from "./Footer";
 
 export {
@@ -25,5 +26,6 @@ export {
   PDPContent,
   RelatedItems,
   CartContainer,
+  CheckoutContainer,
   Footer,
 };

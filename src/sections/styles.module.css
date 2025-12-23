@@ -129,6 +129,32 @@
   padding: 12px 24px;
   text-decoration: none;
 }
+/* checkout page */
+.checkout {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 @media (max-width: 992px) {

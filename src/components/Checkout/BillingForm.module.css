@@ -1,0 +1,47 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 22px;
+}
+
+.form input {
+  margin-top: 8px;
+  padding: 14px 16px;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form input:focus {
+  outline: 1px solid #db4444;
+  background-color: #fff;
+}
+
+.checkbox {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #db4444;
+}
