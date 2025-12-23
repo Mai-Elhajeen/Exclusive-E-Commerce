@@ -23,6 +23,8 @@ import ProductInfo from "./PDP/ProductInfo";
 import CartItem from "./Cart/CartItem";
 import CartSummary from "./Cart/CartSummary";
 import CartTable from "./Cart/CartTable";
+import BillingForm from "./Checkout/BillingForm";
+import CheckoutSummary from "./Checkout/CheckoutSummary";
 
 export {
   ArrowControls,
@@ -50,4 +52,6 @@ export {
   CartItem,
   CartSummary,
   CartTable,
+  BillingForm,
+  CheckoutSummary,
 };
