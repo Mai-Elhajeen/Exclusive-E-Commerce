@@ -6,7 +6,7 @@ import { mapApiProductToUI } from "../utils";
 import styles from "./styles.module.css";
 import { products as mockProducts } from "../data/productsData";
 
-const PDPDetails = () => {
+const PDPDetails = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -57,6 +57,9 @@ const PDPDetails = () => {
           setActiveColor={setActiveColor}
           activeSize={activeSize}
           setActiveSize={setActiveSize}
+          isLoggedIn={isLoggedIn}
+          isFavorite={favoriteItems.includes(product.id)}
+          onToggleFavorite={() => toggleFavorite(product.id)}
         />
       </div>
     </section>

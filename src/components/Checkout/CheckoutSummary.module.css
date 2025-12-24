@@ -72,3 +72,23 @@
 .placeOrder:hover {
   opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+  .summary {
+    gap: 22px;
+  }
+
+  .product {
+    grid-template-columns: 40px 1fr auto;
+  }
+
+  .product img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title,
+  .price {
+    font-size: 13px;
+  }
+}

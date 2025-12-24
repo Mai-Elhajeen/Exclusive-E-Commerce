@@ -7,7 +7,6 @@ const Cart = () => {
     <>
       <TopHeader />
       <MainHeader showUser={true} countCart={3} />
-      <Line margin="16px 0 0" />
       <CartContainer />
       <Footer />
     </>

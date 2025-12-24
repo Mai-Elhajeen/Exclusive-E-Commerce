@@ -1,5 +1,4 @@
 .breadcrumbs {
-  max-width: 1200px;
   margin: 40px auto;
 
   display: flex;
@@ -10,11 +9,12 @@
   color: #777;
 }
 
-.breadcrumbs span:last-child{
+.breadcrumbs span:last-child {
   color: #000;
 }
 
-.breadcrumbs span, .breadcrumbs a {
+.breadcrumbs span,
+.breadcrumbs a {
   color: #777;
-    text-decoration: none;
+  text-decoration: none;
 }

@@ -20,15 +20,16 @@
 }
 
 .method {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .options {
-    order: 2;
-    display: flex;
-    gap: 8px;
+  order: 2;
+  display: flex;
+  gap: 8px;
 }
 
 
@@ -78,4 +79,25 @@
 .orderBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .method {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .options {
+    order: 0;
+  }
+
+  .coupon {
+    flex-direction: column;
+  }
+
+  .coupon button {
+    width: 100%;
+    padding: 14px;
+  }
 }
