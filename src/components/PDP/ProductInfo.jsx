@@ -14,6 +14,7 @@ import { useCart } from "../../context/CartContext";
 import Line from "../Line";
 
 const ProductInfo = ({
+  id,
   product,
   activeColor,
   setActiveColor,
@@ -21,7 +22,7 @@ const ProductInfo = ({
   setActiveSize,
   isLoggedIn,
   isFavorite,
-  toggleFavorite,
+  onToggleFavorite,
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [errorMsg, setErrorMsg] = useState("");
@@ -171,7 +172,7 @@ const ProductInfo = ({
               navigate("/login");
               return;
             }
-            toggleFavorite(product.id);
+            onToggleFavorite?.(id);
           }}
         >
           {isFavorite ? <RiHeartFill color="#db4444" /> : <RiHeartLine />}

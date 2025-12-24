@@ -43,6 +43,7 @@ const OurProducts = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
         {visibleProducts.map((product) => (
           <CardProduct
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             badgeType={product.badgeType === "New" ? product.badgeType : ""}

@@ -26,9 +26,9 @@ const CartItem = ({ item }) => {
         </div>
       </div>
 
-      <span>${item.price}</span>
+      <span data-label="Price">${item.price}</span>
 
-      <div className={styles.quantity}>
+      <div className={styles.quantity} data-label="Quantity">
         <button
           onClick={() =>
             updateQuantity(
@@ -36,7 +36,7 @@ const CartItem = ({ item }) => {
               item.selectedColor,
               item.selectedSize,
               item.quantity - 1,
-            Math.max(1, item.quantity - 1)
+              Math.max(1, item.quantity - 1)
             )
           }
         >
@@ -57,7 +57,7 @@ const CartItem = ({ item }) => {
         </button>
       </div>
 
-      <span>${item.price * item.quantity}</span>
+      <span data-label="Subtotal">${item.price * item.quantity}</span>
     </div>
   );
 };

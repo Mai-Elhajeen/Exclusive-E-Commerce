@@ -7,7 +7,6 @@ const Login = ({ onLogin }) => {
     <>
       <TopHeader />
       <MainHeader showFavorite={false} showCart={false} showUser={false} />
-      <Line margin="16px 0 0" />
       <LoginContainer onLogin={onLogin} />
       <Footer />
     </>  )

@@ -83,7 +83,10 @@ const CardProduct = ({
             </span>
           )}
           {showView && (
-            <span className={styles.icon}>
+            <span
+              className={styles.icon}
+              onClick={() => navigate(`/product/${id}`)}
+            >
               <RiEyeLine />
             </span>
           )}

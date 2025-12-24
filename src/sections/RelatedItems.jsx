@@ -21,6 +21,7 @@ const RelatedItems = () => {
         {visibleProducts.map((product) => (
           <CardProduct
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             oldPrice={product.oldPrice}

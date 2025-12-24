@@ -72,3 +72,35 @@
   min-width: 20px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .product {
+    align-items: flex-start;
+  }
+
+  .product img {
+    width: 80px;
+  }
+
+  .quantity {
+    justify-content: space-between;
+  }
+
+  .row span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .row span::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #777;
+  }
+}

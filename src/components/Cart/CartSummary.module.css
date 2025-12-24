@@ -87,3 +87,25 @@
 .coupon button:hover {
   opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+  .cartSummary {
+    flex-direction: column;
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .detailsBox {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .coupon {
+    flex-direction: column;
+    order: 2;
+  }
+
+  .coupon button {
+    width: 100%;
+  }
+}

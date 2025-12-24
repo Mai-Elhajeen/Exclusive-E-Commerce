@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { TopHeader, MainHeader, Line } from "../components";
+import { TopHeader, MainHeader } from "../components";
 import { Footer, PDPContent, RelatedItems } from "../sections";
 
 const ProductDetailsPage = ({ isLoggedIn, favoriteItems, toggleFavorite }) => {
@@ -19,7 +19,6 @@ const ProductDetailsPage = ({ isLoggedIn, favoriteItems, toggleFavorite }) => {
         countFavorite={favoriteItems.length}
         onFavoriteClick={() => (isLoggedIn ? null : navigate("/login"))}
       />
-      <Line margin="16px 0 0" />
       <PDPContent
         isLoggedIn={isLoggedIn}
         favoriteItems={favoriteItems}
