@@ -1,7 +1,7 @@
 import { products as mockProducts } from "../data/productsData";
 
 const mapApiProductToUI = (apiProduct) => {
-  const mock = mockProducts.find(p => p.id === apiProduct.id);
+  const mock = mockProducts.find(p => p.id === apiProduct.id) || {};
   const normalizedColors =
     mock?.colors?.map((color) => ({
       key: color.key,
@@ -27,7 +27,7 @@ const mapApiProductToUI = (apiProduct) => {
     views: mock?.views || 0,
     showFavorite: true,
     showView: true,
-    showColors: mock?.colors?.length > 0,
+    showColors: Array.isArray(normalizedColors) && normalizedColors.length > 0,
     showAddToCart: true,
     description: apiProduct.description,
     category: apiProduct.category

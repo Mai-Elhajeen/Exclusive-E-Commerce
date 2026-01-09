@@ -36,10 +36,8 @@ const CardProduct = ({
     colors && colors.length > 0 ? colors[0].key : null
   );
 
-  const displayedImage =
-    (selectedColorKey &&
-      colors.find((c) => c.key === selectedColorKey)?.image) ||
-    image;
+  const selectedColor = colors.find((c) => c.key === selectedColorKey);
+  const displayedImage = selectedColor?.images?.[0] || selectedColor?.image || image;
   const navigate = useNavigate();
 
   useEffect(() => {

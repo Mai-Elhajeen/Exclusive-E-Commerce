@@ -11,6 +11,8 @@ const ProductGallery = ({ product, activeColorKey }) => {
   const images =
     activeColor?.images?.length > 0
       ? activeColor.images
+      : activeColor?.image
+      ? [activeColor.image]
       : product.image
       ? [product.image]
       : [];
