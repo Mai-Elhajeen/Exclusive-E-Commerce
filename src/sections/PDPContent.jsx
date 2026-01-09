@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Breadcrumbs, ProductGallery, ProductInfo } from "../components";
 import { fetchProductById } from "../api/productApi";
-import { mapApiProductToUI } from "../utils";
+import mapApiProductToUI from "../utils/mapProduct";
 import styles from "./styles.module.css";
 import { products as mockProducts } from "../data/productsData";
 
@@ -17,15 +17,18 @@ const PDPDetails = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
 
   useEffect(() => {
     const loadProduct = async () => {
+      setLoading(true);
+      setError(null);
       try {
-        const apiProduct = await fetchProductById(id);
-
-        // Fallback to mock if API fails
-        const mockProduct = mockProducts.find(
-          (p) => String(p.id) === String(id)
-        );
-        const mapped = mapApiProductToUI(apiProduct || mockProduct);
-        setProduct(mapped);
+        const mockProduct = mockProducts.find((p) => String(p.id) === String(id));
+        let finalProduct = null;
+        if (mockProduct) {
+          finalProduct = mockProduct;
+        } else {
+          const apiProduct = await fetchProductById(id);
+          finalProduct = mapApiProductToUI(apiProduct);
+        }
+        setProduct(finalProduct);
       } catch (err) {
         setError("Failed to load product");
       } finally {
@@ -37,8 +40,10 @@ const PDPDetails = ({ isLoggedIn, favoriteItems = [], toggleFavorite }) => {
   }, [id]);
 
   useEffect(() => {
-    if (product?.colors?.length) {
+    if (product?.colors?.length > 0) {
       setActiveColor(product.colors[0].key);
+    }else {
+      setActiveColor(null);
     }
   }, [product]);
 

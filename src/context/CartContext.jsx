@@ -1,17 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { getCartItems, saveCartItems } from "../api/cartApi";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(() => {
-    // get cart items from local storage on initial load
-    const savedCart = localStorage.getItem("cartItems");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
+  const [cartItems, setCartItems] = useState(() => getCartItems());
 
   // save cart items to local storage whenever they change
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    saveCartItems(cartItems);
   }, [cartItems]);
 
   // add item to cart
@@ -48,9 +45,9 @@ const CartProvider = ({ children }) => {
     setCartItems((prevProducts) =>
       prevProducts.filter(
         (item) =>
-          item.id !== productId &&
+          !(item.id === productId &&
           item.selectedColor === selectedColor &&
-          item.selectedSize === selectedSize
+          item.selectedSize === selectedSize)
       )
     );
   };

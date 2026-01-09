@@ -63,6 +63,8 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    status: "In Stock",
+    sizes: ["S", "M", "L"],
   },
 
   {
@@ -92,6 +94,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    sizes: ["L"],
   },
 
   {
@@ -125,6 +128,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    sizes: ["S", "M", "L"],
   },
   {
     id: 5,
@@ -141,6 +145,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    sizes: ["S", "M", "L"],
   },
   {
     id: 6,
@@ -173,6 +178,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    sizes: [],
   },
   {
     id: 7,
@@ -189,6 +195,8 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    status: "In Stock",
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 8,
@@ -205,6 +213,8 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    status: "In Stock",
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 9,
@@ -221,6 +231,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 10,
@@ -237,5 +248,7 @@ export const products = [
     showView: true,
     showColors: true,
     showAddToCart: true,
+    status: "In Stock",
+    sizes: ["XS", "S", "M", "L", "XL"],
   },
 ];
